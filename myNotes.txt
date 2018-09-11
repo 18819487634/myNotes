@@ -5,5 +5,22 @@
     4>执行git remote add otigin https://github.com//18819487634/仓库名.git   把待推送文件和远程的git仓库联系在一起
     5>git push -u origin master     推送到git仓库的master分支(即主分支)。也可以通过sourceTree(版本管理工具)将本地文件推到git仓库即可
 
-2.
+2.给父元素声明<div class="background" :style="{ minHeight: minHeight}"></div>     //第一层div
+    data () {
+        return {
+            minHeight: document.documentElement.clientHeight + 'px'
+        }
+    }
+  这样可以适配不同的手机终端
+  clientHeight 元素可视区域的高度，计算公式：clientHeight = topPadding + bottomPadding + height - 水平滚动条高度
+  
+  offsetHeight = padding + height + border = clientHeight + 水平滚动条高度 + 边框
+  
+3.li标签前的圆点样式
+    首先设置list-style none ---->然后li::before{ content: '●', color: red}    content里的内容随意输入。
+    
+    vue中的实现1.list-style none ---->  &>li                         <ul>
+                                          ::before                      <li><span></span>evan</li>      //span标签放哪就会在哪里插入●
+                                            content '●'                 <li><span></span>zhong</li>
+                                            color red                </ul>   
 
