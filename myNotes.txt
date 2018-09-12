@@ -24,4 +24,22 @@
                                             content '●'                 <li><span></span>zhong</li>
                                             color red                </ul>   
 
-4.
+4.快速修改线上的功能要用热更         git工作流
+
+5.css   强制不换行：white-space: nowrap
+        自动换行：   word-wrap:  break-word
+        强制英文单词断行：  word-break:break-all
+        超出显示省略号：    text-over:ellipsis, overflow: hidden
+        超出显示省略号：    text-over:ellipsis, overflow: hidden
+
+6.时间选择器标签<mt-datetime-picker></mt-datetime-picker>
+    <mt-datetime-picker
+      ref="timePicker"              //通过this.$refs.timePicker.open()显示出来
+      type="time"
+      cancelText="取消"
+      confirmText="确认"
+      :startHour="startHour"
+      :endHour="endHour"
+      :value="timePicker.value || projectDetail.remind_at"
+      @confirm="timePickerConfirm">
+    </mt-datetime-picker>
