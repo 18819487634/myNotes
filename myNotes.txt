@@ -43,3 +43,16 @@
       :value="timePicker.value || projectDetail.remind_at"
       @confirm="timePickerConfirm">
     </mt-datetime-picker>
+    
+7.后台通过文本编辑框输入的文本，通过后端返回给前端(手机端)接受时要用v-html，因为有可能是加粗加大的字体。
+
+8.css的 @media 用于适配特殊的手机终端。可以放在样式的任意位置。
+    @media screen and (width: 375px)    //对于屏幕宽度375px的终端采用一下样式。ps：iphone6、7的屏幕宽度为375px
+        .head-content
+            font-size px2rem(30)
+            margin-right px2rem(30)
+
+9.定义组件需要抽象出通用业务，如果一个组件里面的业务代码都写死了，不能被公用，那么就不算是组件。而是单纯引入的界面。
+
+10.
+            
