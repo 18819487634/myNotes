@@ -56,5 +56,40 @@
 
 10. :active CSS伪类代表一个元素，通常用户按下鼠标时启动。:active伪类会被后续链路相关的伪类覆盖(:link、:hover、:visited)
 
-11.
+11. vue中最常用的生命阶段：created、mounted、activated、deactivated。
+    页面第一次进入：created-->mounted-->activated-->(退出时才触发)deactivated
+    当页面再次进入时(前进或者后退)时，只触发activated
+
+12. 安装vue-wechat-title依赖，可以通过meta来在路由中配置微信导航栏的标题。
+    {
+        path: 'list',
+        name: 'Home',
+        meta: {
+            title: '家'
+        },
+        component (resolve) {
+            require.ensure([], () => resolve(require('src/views/Home.vue')), 'Home')
+        }
+    }
+    
+13. 表格单元Table Cell居中，好用。
+
+14. vue中的Date()已经格式化，可以通过Data.parse(new Date())把格式化的时间转换为时间戳。
+
+15. vue项目中的配置文件:
+        .editconfig文件帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码方式，与版本控制系统配合使用。
+        
+        .babelrc文件是Babel的配置文件，放在根目录。Babel是转码器，将ES6---->ES5从而在现有环境执行。
+        
+        .ESLint是识别ECMAScript并按规则给出报告的代码检测工具，其被设置为完全可配置，因为可以完全按照自己的规则来报告，
+            .eslintrc是其配置文件（放在根目录），团队使用ESLint即同意编码规范。
+            
+        Svgo是一个基于Nodejs的工具，用于优化SVG矢量图形文件。
+
+15. 设置浏览器导航栏左上角图标
+    <link rel="shortcut icon" href="./static/assets/head.ico">      // 注意：要用ico文件格式的图
+    
+16. git MV 旧文件名.vue 新文件名.vue
+
+17. 缓存
             
