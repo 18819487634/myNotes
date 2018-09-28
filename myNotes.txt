@@ -92,4 +92,13 @@
 16. git MV 旧文件名.vue 新文件名.vue
 
 17. 缓存
-            
+
+18. vue表格中插入图片， <template slot-scope="scope">
+                            <img :src="scope.row.avator" style="width:36px height:36px">
+                        </template>
+
+19. Qs库是用来把URL中的参数转为对象，将对象转为URL参数形式。
+
+20. 绝对定位absolute不能乱用，有时需要给父组件添加relative属性。
+
+21. 
