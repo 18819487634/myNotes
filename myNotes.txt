@@ -115,3 +115,7 @@
         }
         
     }
+
+23. div 一行显示，可以使用float属性或者display inline.
+
+24. 
