@@ -118,4 +118,11 @@
 
 23. div 一行显示，可以使用float属性或者display inline.
 
-24. 
+24. 导航守卫vue-router提供导航守卫主要用来通过跳转或取消的方式守卫导航。
+    每个守卫方法接收三个参数：
+        to：Route：即将要进入的目标路由
+        from：Route：当前导航正要离开的路由
+        next：Function：一定要调用该方法来resolve这个钩子。
+        
+25. Vue.nextTick([callbacj, context])
+    用法： 在下次DOM更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的DOM。
