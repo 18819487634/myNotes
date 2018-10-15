@@ -131,7 +131,15 @@
     router.replace()的方法跳转不会产生历史记录，即不能通过返回按钮回到上个页面。
     
 27. css滤镜filter属性提供图形特效：像模糊，锐化，元素变色。
-
+    设置高斯模糊示例：
+        .background-img
+            position fixed
+            top 0
+            background-size cover
+            filter blur(5px)
+            overflow-y auto
+            box-sizing border-box
+            transform scale(1.1)
 28. img的clip属性可以剪切图片，表示以图片左上角为原点，定义一个上，右，下，左的矩形框减除想要的大小。
     img{
         position: absolute;
