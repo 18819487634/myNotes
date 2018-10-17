@@ -148,4 +148,10 @@
     
 29. img的alt属性可以添加图片显示失败时的提示文字，文字的样式通过img的父类定义即可。
 
-30. 
+30. 使用typeof可以判断数据类型
+        let test = 'qwer'
+        let test1 = 123
+        console.log(typeof test1)
+        console.log(typeof test)
+        
+31. 
