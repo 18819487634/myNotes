@@ -152,6 +152,28 @@
         let test = 'qwer'
         let test1 = 123
         console.log(typeof test1)
-        console.log(typeof test)
-        
-31. 
+        console.log(typeof test)    
+
+31. 打开指定链接window.location.href = this.url
+
+32. element中的table用法：如果想要对表格中的数据做操作，可以使用:formatter="formatterMethod"
+    示例：
+        <el-table
+        :data="channelList"
+        :style="{width: boxWidth}">
+            <el-table-column
+              label="渠道类型"
+              :formatter="formatterMethod">
+            </el-table-column>
+        </el-table>
+    methods: {
+        formatterMethod (row, column) {         //  传入一行数据，然后根据其中的数据做判读，return用于显示
+            if (row.channel_type === 'project') {
+                return '项目渠道‘
+            }
+        }
+    }
+
+33. element或者iview的表格都有align样式，用于调整列对齐样式，默认为左对齐。left，center，right
+
+34. 
