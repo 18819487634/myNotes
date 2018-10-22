@@ -1,4 +1,4 @@
-1.把文件推到git仓库的步骤：
+﻿1.把文件推到git仓库的步骤：
     1>在git上创建一个新的仓库
     2>在本地git bash 执行git init  （会多一个.git的文件夹，Git用它来跟踪和管理版本库）
     3>git add .     把本地文件提交变成待推送状态
@@ -176,4 +176,17 @@
 
 33. element或者iview的表格都有align样式，用于调整列对齐样式，默认为左对齐。left，center，right
 
-34. 
+34. 监听？？
+
+35. 按钮被点击时添加样式：
+    <div class="button" @click="goTest"></div>
+    <style>
+        .button
+            background blue
+        .button: active
+            bakcground red              // 当按钮被按住时变成红色
+    </style>
+    
+36. @click.stop="methods" 用于阻止事件继续传播，主要用于内外层都有@click方法时，在内层使用stop阻止传播到外层。
+
+37. 
