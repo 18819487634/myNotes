@@ -238,4 +238,30 @@
         
 44. 当v-for和v-if处于统一节点时，v-for的优先级更高
 
-45. 
+45. Vue.js内建的$emit方法，是用在子组件上的，相当于传递了一个事件名或者props，在父组件上可以给这个事件名绑定上父组件的方法或者其他什么，来改变子组件的内容或状态。 
+    $emit('someMethods', 666)   $eimt可以传递两个参数，第一个参数为事件名，第二个参数可以在父组件中使用$event访问到这个值。
+
+46. stylus是更简洁的css样式，即写样式时不需要再写冒号、分号、花括号等。
+
+47. require.ensure()配置路由实现懒加载。
+    自动跳转首页的实现是通过：
+        {
+            path: '*',
+            redirect: {name: 'HomePage'}        //即使用重定向来跳转到指定首页
+        }
+
+48. 通过设置路径别名可以简化路径的书写：在build/webpack.base.conf.js文件中的resolve---->alias中进行配置即可：
+    resolve: {
+        alias: {
+          'vue$': 'vue/dist/vue.runtime.esm.js',
+          'SRC': resolve(['src']),
+          'COMPONENTS': resolve(['src', 'components']),
+          'IMAGES': resolve(['src', 'assets/images']),
+          'VIEWS': resolve(['src', 'views']),
+          'SVG': resolve(['src', 'assets/svg'])
+        }
+    }
+    这里只举一些例子，主要是类似IMAGE这种，多级复杂的路径，在使用时需要在前面加上'~'，譬如：
+        <img src="~IMAGES/home/avator.png">     等价于  <img src="assets/images/home/avator.png">
+        
+50. 
