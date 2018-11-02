@@ -264,4 +264,7 @@
     这里只举一些例子，主要是类似IMAGE这种，多级复杂的路径，在使用时需要在前面加上'~'，譬如：
         <img src="~IMAGES/home/avator.png">     等价于  <img src="assets/images/home/avator.png">
         
-50. 
+50. vue子组件中props的type有String、Number、Boolean、Function、Object、Array、Symbol。
+
+51. @param记录传递给一个函数的参数，主要用于对某个函数的参数的各项说明，包括参数名、参数数据类型、描述。
+
