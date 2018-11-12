@@ -154,7 +154,7 @@
         console.log(typeof test1)
         console.log(typeof test)    
 
-31. 打开指定链接window.location.href = this.url
+31. 打开指定链接window.location.href = this.url       注意这里的URL要是完整链接，即http://www.baidu.com
 
 32. element中的table用法：如果想要对表格中的数据做操作，可以使用:formatter="formatterMethod"
     示例：
@@ -289,7 +289,33 @@
         屏幕可用工作区的高度： window.screen.availHeight
         屏幕可用工作区的宽度： window.screent.availWidth
         
-52. 
+52. vue监听滚动事件实现分页加载数据，首先要监听页面滚动到最下方，然后调用接口获得后续列表并且拼接在之前列表的后面，从而实现滚动分页无限加载数据。
+    难点1：监听滚动。难点2：使用vuex拼接数据。
+    如果是单个页面推荐使用：mounted () {window.addEventListener('scroll', this.loadMoreText)}来监听滚动，loadMoreText为自定义方法。
+    在loadMoreText方法中通过：页面全文高度 - 页面被卷去高度 <= 页面可见区域高度 + 20    来判断是否滚动到了页面的底部。其中20相当于灵敏度，越小越灵敏。
+    
+    如果是子组件页面则需要使用。即路由使用父子路由，children路由，此种情况则需要在activated中做监听。
+    activated () {
+        this.$nextTick(() => {
+            this.addScrollListener()
+        }
+    }
+    methods: {
+        addScrollListener () {
+            this.$refs.mainBox.onscroll = function () {
+                this.controlScroll(this.loadMoreText)           //  loadMoreText方法即为判断是否到达底部然后继续加载的方法。
+            }
+        },
+        controlScroll (func, context) {
+            clearTimeout(func.tId)
+            func.tId = setTimeout(() => {
+                func.apl(cotext)
+            }， 10）
+        }
+53. vue提供了transition的封装组件，因此添加动画效果只需要使用transition组件即可。
+    <transition name="fade">       //通过name在样式中添加相应的动画。
+        <div>something</div>
+    </transition>
     
     
     
