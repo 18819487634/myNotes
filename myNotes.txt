@@ -29,8 +29,7 @@
 5.css   强制不换行：white-space: nowrap
         自动换行：   word-wrap:  break-word
         强制英文单词断行：  word-break:break-all
-        超出显示省略号：    text-over:ellipsis, overflow: hidden
-        超出显示省略号：    text-over:ellipsis, overflow: hidden
+        超出显示省略号：    text-overflow:ellipsis, overflow: hidden, white-space: nowrap
 
 6.时间选择器标签<mt-datetime-picker></mt-datetime-picker>
     <mt-datetime-picker
@@ -317,7 +316,9 @@
         <div>something</div>
     </transition>
     
-    
+54. 给标签加上title即可添加鼠标悬停给出提示信息。
+
+55.      
     
     
     
