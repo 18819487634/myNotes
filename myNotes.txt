@@ -318,7 +318,15 @@
     
 54. 给标签加上title即可添加鼠标悬停给出提示信息。
 
-55.      
+55. v-show和v-if的坑：如果一个列表滚动分页加载，如果这个列表为空就不显示，这时如果使用v-if就会出现该列表的一些滚动属性underfined，因为v-if如果条件为假是完全不渲染的，而这里使用v-show就
+    可以完美解决underfined。
+
+56. 图片居中
+        display block           将图片设置为block独占一行，然后margin auto来实现居中
+        margin-left auto
+        margin-right auto
+        
+57. 
     
     
     
