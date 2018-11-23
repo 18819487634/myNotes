@@ -326,10 +326,56 @@
         margin-left auto
         margin-right auto
         
-57. 
+57. 静态活动页面：通过npm run server跑起来，想要调用测试服或者正式服的接口需要在链接后面加上token即授权。
+		localhost:1000/myPage/?__token=相应的token。
+
+58.	Axios使用方法：
+			1）安装：npm install axios
+			2）执行get请求
+						axios.get('/user?id=12345')				//id固定时可以直接这样传参
+							.then(function (response) {
+								console.log(response)
+							)}
+							.catch(function (error) {
+								console.log(error)
+							)}
+					传参的另外一种写法：
+						axios.get('/user', {
+							params: {
+								id: 12345
+							}
+							)}
+							.then(function (response) {
+								console.log(response);
+							)}
+							.catch(function (error) {
+								console.log(error);
+							)}
+
+				3）执行post请求：
+							axios.post('/user', {
+									firseName: 'jay',
+									lastName: 'zhou'
+								)}
+								.then(function (response) {
+									console.log(response);
+								)}
+								.catch(function (error) {
+									console.log(error)
+								)}
+								
     
     
-    
+ 59.	git的一些命令：
+			git checkout -b branchA			//创建新的分支
+			git checkout master					//切换分支
+			git pull										//拉去远程最新代码
+			git add .									//提交改动到中间仓库
+			git push origin branchname		//把改动推到远端
+			git rebase master						//把master合并到本地本地分支
+			然后再到gitHub上完成合并。
+			
+60.	
     
     
     
