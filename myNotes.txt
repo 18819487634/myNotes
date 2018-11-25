@@ -374,6 +374,19 @@
 			git push origin branchname		//把改动推到远端
 			git rebase master						//把master合并到本地本地分支
 			然后再到gitHub上完成合并。
+            
+            合并流程
+                git add .
+                git commit -m "修改了一些"
+                git push origin branchName
+                git checkout master
+                git pull
+                git checkout branchName
+                git pull
+                git rebase master
+                git merge master
+                git push -f         
+                再到gitlab上请求合并。
 			
 60.	
     
