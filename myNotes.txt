@@ -422,7 +422,9 @@
 			content中的时间格式必须使用GMT的时间格式，或者直接设置为0
 		<meta http-equiv="Expires" content="0">
 	
-    
+64.  isNan()方法用于判断一个变量是不是数字。不是数字时为真，is not a number.
+
+65. ‘...’     三个点表示对象展开运算符
     
     
     
