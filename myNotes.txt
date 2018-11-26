@@ -388,7 +388,40 @@
                 git push -f         
                 再到gitlab上请求合并。
 			
-60.	
+60.	HTML中引入.js文件或者引入.css文件可以在后面加上?v=1	数字随意写，这样可以手动清除缓存。
+			示例：<script data-main="./qrCode.js?v=3" src="../js/lib/require.js"></script>
+						<link rel="stylesheet" href="./index.css?v=0"/>
+						
+61.	?的用法： userName?: this.data.user_name			加个问号表示如果存在就是该值，如果不存在就是undefined
+
+62.	react中不能使用返回false的方式阻止默认行为，必须明确的使用preventDefault
+		<a href="#" onclick="console.log('the link was clicked'); return false">
+			click me
+		</a>		//HTML写法
+		
+		//	react 写法
+		function ActionLink() {
+			function handleClick(e) {
+				e.preventDefault();
+				console.log('the link was click');
+			}
+		
+		
+			return (
+				<a href="#" onclick={handleClick}>
+					click me
+				</a>
+		}	
+		
+63.	HTML中meta头部清除缓存的写法：
+		//	禁止浏览器从本地机的缓存中调阅页面内容，这样访问者将无法脱机浏览
+		<meta http-equiv="Pragma" content="no-cache">		
+		//	元缓存控制标记允许Web发布者定义缓存应如何处理页面，允许的值：public，private，no-Cache，no-Store。	
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		//	制定网页缓存中的过期时间，一旦网页过期，必须到服务器上重新调阅，
+			content中的时间格式必须使用GMT的时间格式，或者直接设置为0
+		<meta http-equiv="Expires" content="0">
+	
     
     
     
