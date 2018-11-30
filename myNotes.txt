@@ -426,6 +426,112 @@
 
 65. ‘...’     三个点表示对象展开运算符
     
-    
-    
+66.	css更换img图片src的方式：
+			<img class="my-img"/>
+			.my-img{
+				content: src('./assets/avatar.png');
+			}
+			
+67.	css样式：cursor: pointer;			//	鼠标悬浮时变成手的形状。
+
+68.	type :quit<Enter> to quit VIM
+		git出现这种问题时：使用Esc进入正常模式，然后输入：	注意冒号也要输入。		
+						一般常用	:wq	即可退出该模式，然后继续执行git命令。
+		:q 退出（简称:quit）
+		:q!退出而不保存（简称:quit!）
+		:wq 写作和退出
+		:wq! 写入和退出即使文件只有读权限（如果文件没有写权限：强制写入）
+		:x 写和退出（类似于:wq，但只有在有变化时才写）
+		:exit写和退出（同:x）
+		:qa全部退出（简称:quitall）
+		:cq 退出而不保存并使Vim返回非零错误（即退出并显示错误）
+		
+69.	页面接口调试时，勾选preserve log可以一直保留接口调用历史。
+		例如：如果调一个接口后，会刷新页面，勾选该选项后，页面刷新，调用的接口记录仍然存在。
+		
+70.	js的map()方法创建一个新数组，其结果是在调用数组中的每个元素上调用提供的函数。
+		示例：	var array1 = [1, 2, 3, 4]
+					const map1 = array1.map(x => x * 2)
+					console.log(map1)				//	打印结果为[2, 4, 6, 8]
+
+71.	箭头函数基本语法：
+			(参数1，参数2，...，参数n) => { 函数声明 }
+			(参数1，参数2，...，参数n) => 表达式（单一）
+			//	当只有一个参数时，圆括号是可选的
+			(单一参数) => { 函数声明 }
+			单一参数 => { 函数声明 }
+			//	没有参数的函数应该有一对圆括号
+			() => { 函数声明 }
+   
+72.	列表中的最后一个元素可以使用last-child属性为其添加独立样式。
+			示例：	
+					.ProjectList {
+						background: pink;
+					}
+					.ProjectList: last-child {		//	为list最后一个元素添加独立样式；
+						background: red;
+					}
+					
+73.	过滤手机号的方法
+			
+			content = content.replace(/1[3,4,5,7,8]{1}[0-9]{9}/gi, function (s) {
+				return new Array(s.length).join('*');
+			  });
+			  return content;
+			  
+74.	js时间戳格式化方法：
+		export function TimeStream(timestamp: number, type?: string) {
+		  const date: Date = new Date(timestamp * 1000)
+		  const Y = date.getFullYear()
+		  const M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1)
+		  const D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+		  const h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+		  const m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+		  const s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
+		  const nowTime: Date = new Date()
+		  const timeToString = nowTime.toString()
+		  switch (type) {
+			case 'YM': // 年-月
+			  return Y + '-' + M
+			case 'MD': // 月-日
+			  return M + '-' + D
+			case 'MD_HM': // 月-日
+			  return M + '-' + D + ' ' + h + ':' + m
+			case 'YMD_HMS': // 月-日 时：分：秒
+			  return Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
+			case 'CN_YMD': // x年x月x日
+			  return Y + '年' + M + '月' + D + '日'
+			case 'CN_YMD_HM': // x年x月x日
+			  return Y + '年' + M + '月' + D + '日' + ' ' + h + ':' + m
+			case 'CN_MD_HM': // x月x日
+			  return M + '月' + D + '日' + ' ' + h + ':' + m
+			case 'hm': // 时:分
+			  return h + ':' + m
+			case '-D': // 天数差
+			  return Math.floor(((timestamp * 1000) - Date.parse(timeToString)) / 1000 / 3600 / 24)
+			case '-H': // 小时差
+			  return Math.ceil((timestamp * 1000 - Date.parse(timeToString)) / 1000 / 3600)
+			default: // 年-月-日 时:分
+			  return Y + '-' + M
+		  }
+		}
+
+75.	
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
     
