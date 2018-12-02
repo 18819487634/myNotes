@@ -516,7 +516,9 @@
 		  }
 		}
 
-75.	
+75.	把本地分支的修改推到远端分支：git push -f origin branchname
+
+76. 
 
 
 
