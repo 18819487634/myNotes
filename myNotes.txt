@@ -479,7 +479,7 @@
 			  });
 			  return content;
 			  
-74.	js时间戳格式化方法：
+74.	js时间戳格式化方法：	传一个type
 		export function TimeStream(timestamp: number, type?: string) {
 		  const date: Date = new Date(timestamp * 1000)
 		  const Y = date.getFullYear()
@@ -518,9 +518,48 @@
 
 75.	把本地分支的修改推到远端分支：git push -f origin branchname
 
-76. 
+76. 	react要使用userState()、userEffect()、userContext()这三个API，在声明函数组件时，需要使用withHooks()将函数封装。
+		示例：	注意：一个文件中只能有一个return
+			export const ConfirmButton = withHooks(function ConfirmButton() {
+				const [isShowButton, setIsShowButton] = useState(false)
+				if (isShowButton) {
+					return (
+						<div className={'Button-Container'}>
+							确定
+						</div>
+					）
+				}
+			}
+			
+77.	@media (min-height: 810px) {
+				用于给iphoneX这种长手机专门做样式适配。
+		}
+		
+78.	location.protocol	设置或返回当前URL的协议
 
+79.	location.hostname		设置或返回当前URL的主机名。
 
+80.	返回当前时间戳 new Date().getTime() 返回的当前时间的毫秒数，
+		（new Date().getTime())	/	1000		返回秒数
+		
+81.	withHooksAPI的useEffect中要有clear操作，useEffect中传递的第二个参数时一个数组，表示这个函数的依赖，当且仅当依赖发生改变是
+		才会进入useEffect并执行其中的代码。
+			该函数有三种情况：
+				1. useEffect(() => {}, [])	当传入一个空数组时，该方法里面内容只会在加载时执行一次。
+				2. useEffect(() => {})		当什么都不传入时，每次页面内有数据改动时就会进入该方法执行一次。
+				3. useEffect(() => {}, [userId, lectureId])	当传入内容发生改变时，即userId或lectureId发生改变时就会执行该方法。
+				
+82.	判断终端是不是电脑的函数
+			function isPC() {
+				if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+					return false
+				} else {
+					return true
+				}
+			}
+		同样可以使用类似方法判断终端是不是ios、安卓等等。
+		
+83.	
 
 
 
