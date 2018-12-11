@@ -592,7 +592,32 @@
 				//	commit_id是要回到的那个节点，可以通过git log查看，可以只选前6位，撤销之后，已经commit的修改将会清除。
 				git reset --hard commit_id
 				
-88.	
+88.	react项目路由跳转是通过react-router-dom的插件，
+			//	电脑端用法示例：
+			<div>
+			  <BrowserRouter>
+				<Switch>
+				  <Route path="/PopupController" component={PopupController} />
+				  <Route path="/SharedRevenue" component={SharedRevenue}/>
+				</Switch>
+			  </BrowserRouter>
+			</div>
+			
+			//	微信端用法示例：
+			<Router history={browserHistory}>
+				<Route path="/" component={Root}>
+					<IndexRoute component={MainPage}/>
+
+					<Route path='/account/' component={AccountPage}/>
+					<Route path='/account/bought' component={BoughtPage}/>
+					<Route path='/account/bought/evaluation/:target_id' component={Evaluation}/>
+					<Route path='/account/coupons' component={MyCouponListPage} />
+					<Route path='/account/favourites' component={FavouriteRecordPage} />
+				</Route>
+			</Router>
+			
+89.	
+			
 			
 
 
