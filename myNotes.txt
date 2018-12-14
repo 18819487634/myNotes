@@ -616,8 +616,16 @@
 				</Route>
 			</Router>
 			
-89.	
+89.	react 项目配置文件便捷路径：
+			在package.json文件中，moduleNameMapper中添加参数配置：
+				"moduleNameMapper": {
+					"^@components/(.*)$": "<rootDir>/src/components/$1",
+					"^@services/(.*)$": "<rootDir>/src/services/$1"
+				}
 			
+90.	.gitignore文件可以忽略 npm install 或者 yarn install安装时安装的无用的model。
+
+91.	
 			
 
 
