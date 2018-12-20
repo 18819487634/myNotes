@@ -625,7 +625,24 @@
 			
 90.	.gitignore文件可以忽略 npm install 或者 yarn install安装时安装的无用的model。
 
-91.	
+91.	react在componentDidMount挂载setState时除了拉取数据还可以增加添加一个状态，比如：init: false
+        当成功拿到数据时，setState({init: true});    
+            render() {
+                if(init) {
+                    return(
+                        <div>拿到数据时显示的内容</div>
+                    ）
+                } else {
+                    return (
+                        <div>正在努力加载中！没有加载完数据时做一些其他操作，或给一些提示</div>
+                    }
+                }
+            }
+        
+92. 定时器是setInterval().
+
+93. showedComponentUpdate(nextProps, nextState)是否重新渲染，返回false就不渲染。
+
 			
 
 
