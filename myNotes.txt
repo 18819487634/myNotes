@@ -625,7 +625,6 @@
 			
 90.	.gitignore文件可以忽略 npm install 或者 yarn install安装时安装的无用的model。
 
-<<<<<<< HEAD
 91.	git更改分支名：
 			1.	本地分支未推送到远端
 					git branch -m oldName newName
@@ -637,7 +636,7 @@
 					git branch --set-upstream-to origin/newName		//	把修改后的本地分支与远程分支关联
 					
 92.	
-=======
+
 91.	react在componentDidMount挂载setState时除了拉取数据还可以增加添加一个状态，比如：init: false
         当成功拿到数据时，setState({init: true});    
             render() {
@@ -656,9 +655,130 @@
 
 93. showedComponentUpdate(nextProps, nextState)是否重新渲染，返回false就不渲染。
 
->>>>>>> f83cc930c6ff9fa21cf018b997085f28e5bf65f4
-			
+94. ref用到react有状态组件时，ref引用的是组件的实例，所以可以通过子组件的ref可以访问到子组件实例的props，state，refs，实例方法等等。
 
+95. react嵌套在组件中的JSX结构可以在组件内部通过props.childre获得到，示例：
+        class Card extends Component {
+            render () {
+                return(
+                    <div>
+                        {this.props.children}       // 打印props.children对应也给数组，对应父组件中包的内容
+                    </div>
+                }
+            }
+        }
+        
+        ReactDOM.render(
+            <Card>
+                <h1>一级标题</h1>
+            </Card>
+            document.getElementById('root')
+        )
+    
+    
+    使用自定义组件的时候，可以在其中嵌套JSX结构，嵌套的结构在组件内部都可以通过props.children获取到   
+
+96. <h1 style='font-size: 12px; color: red;'>标题1</h1>   // style属性
+
+    react中的style写法：
+    <h1 style={{fontSize: '12px', color: 'red'}}>标题1</h1>
+    其中style接收的是一个对象，css属性中的 '-' 去掉，变成驼峰命名方式。
+
+97. 高阶组件其实是一个函数，它接收组件作为参数，经过自己的处理后变成一个新的组件。
+    示例： 以下就是一个简单高阶组件的用法。
+        export default (InputComponent, name) => {
+            class NewInputComponent extends Component {
+                constructor () {
+                    super()
+                    this.state = {data: null}
+                }
+                
+                componentWillMount () {
+                    let data = localStorage.getItem(name)
+                    this.setState({data})
+                }
+                
+                render() {
+                    return <InputComponent data={tihs.state.data}/>     // InputComponent这个组件要支持data才可以；
+                }
+            }
+            return NewInputComponent
+        }
+
+98. autoprefixer: off 的用法，在react中需要添加autoprefixer来手动关闭编译器否则有些样式无法显示；
+    .max-line {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      /* autoprefixer: off */
+      -webkit-box-orient: vertical;     // 用于溢出文本，省略号展示。
+    }
+    
+99. react中父组件调用子组件的方法示例：
+    export default class Parent extends React.Component {
+        render() {
+            return(
+                <div>
+                    <Child onRef={this.onRef} title={'你瞅啥'}/>
+                    <button onClick={this.showSomething}>点我</button>
+                </div>
+            )
+        }
+        
+        onRef = (ref) => {      //  ref即是挂载阶段从子组件传过来的子组件对象，然后再子组件就可以通过   
+            this.child = ref        this.child.alertMyName() 来调用子组件中的方法。
+        }
+        
+        showSomething = () => {
+            this.child.alertMyName()
+        }
+    }
+    
+    class Child extends React.Component {
+        componentDidMount() {       //  这个太牛逼了，首先Parent组件加载时也会加载其中调用的组件Child
+            this.props.onRef(this)      然后再挂在阶段就会执行this.props.onRef(this) this指的是调用者本身，即子组件Child，
+        }                               onRef恰巧是父组件传过来的，所以在父组件就拿到了子组件Child的对象，就可以调用子组件的方法了。
+        
+        alertMyName = () => alert('靓仔')
+        
+        render() {
+            return(
+                <div>{this.props.title}</div>
+            )
+        }
+    }
+    
+100.	componentWillReceiveProps(nextProps){//	做一些改变子组件state的操作}
+		该生命周期主要用在子组件当中，接收的参数默认为父组件传来的props，当props中的某些状态改变时，子组件可以做一些操作来改变子组件本身的state，
+例如：弹窗的显示首先由父组件传入一个isShow来显示弹窗，在
+	componentWillReceiveProps(nextProps){
+		if (this.state.isShow !== nextProps.isShow) {			//	把父组件传入的isShow赋值给子组件自己的state，然后子组件的显示与隐藏就可以自己控制了
+			this.setState({isShow: nextProps.isShow})
+		}
+	}
+	
+	hideComponent = () => {
+		this.setState({isShow: false})		//	组件的显示与隐藏自己即可控制
+	}
+	
+	render() {
+		if (this.State.isShow){
+			return(
+				<div onClick={this.hideComponent()}>
+					看到了吧
+				</div>
+			)
+		} else {
+			return null
+		}
+	}
+	
+101.	instance.defaults.headers.common ['Authorization'] = AUTH_TOKEN
+			axios配置全局默认值
+			
+		axios拦截器可以在截取请求在.then或者.catch前做一些操作。
+		
+102.	
 
 
 
