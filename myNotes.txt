@@ -778,9 +778,38 @@
 			
 		axios拦截器可以在截取请求在.then或者.catch前做一些操作。
 		
-102.	
+102.	边框属性border，一般情况下都是内边框，即在html中定义	box-sizing: border-box;	即可
+		如果需要外边框在需要的地方定义	box-sizing: content-box;	即可
+		
+103.	三个点	'...'	是es6中的用法，叫拓展运算符。
+			示例：
+			const array = [1, 2, 3]
+			console.log(array)		//	[1, 2, 3,]
+			console.log(...array)	//	1 2 3
+		
+104.	input标签type="number"	可以输入字母e的问题的解决方案
+		<input type="number" onkeypress="return(/[\d]/.test(String.fromCharCode(event.keyCode)))" />
+		使用正则表达式匹配，只能输入数字
+		
+		在react项目中示例：
+		public reg(event: any) {			//	简单粗暴的方式；
+			console.log('111111')
+			// return (/[\d]/.test(String.fromCharCode(event.keyCode)))
+			const test = ['-', '+', 'e', '.', 'E']
+			if (test.indexOf(event.key) !== -1) {
+				event.preventDefault()
+			}
+		}
+		<input type="number" onKeyPress={this.reg} />
+		
+105.	clipboard.js插件可以用于一键复制。
+		使用示例：
+			var clipboard = new Clipboard('.btn')			//	创建一个clipboard对象；
+			
+			<div id="copyText">要复制的内容</div>
+			<button data-clipboard-target="#copyText"></button>		
 
-
+106.	
 
 
 
