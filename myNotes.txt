@@ -809,8 +809,32 @@
 			<div id="copyText">要复制的内容</div>
 			<button data-clipboard-target="#copyText"></button>		
 
-106.	
-
+106.	const reg = /[\u4e00-\u9fa5]/g		//	匹配所有的中文
+		const str = '正则1表达式'
+		str.replace(reg, '')		//	会将中文替换为空，返回剩余部分
+		
+107.	splice(index, length, val)
+		react中使用splice方法示例：
+			state = {
+				list: [1, 2, 3, 4]
+			}
+			const newList = this.state.list
+			newList.splice(2, 1)
+			this.setState({
+				list: newList		//	[1, 2, 4]
+			})
+			
+108.	react中知道index要更换数组中某个值
+		state = {
+			list: [1, 2, 3, 4]
+		}
+		let newList = this.state.list
+		newList[index] = 6
+		this.setState({
+			list = newList
+		}
+		
+109.	
 
 
 
