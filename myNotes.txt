@@ -834,7 +834,9 @@
 			list = newList
 		}
 		
-109.	
+109.	css控制文字竖直显示可以使用 writing-mode: vertical-lr;
+
+110.	
 
 
 
