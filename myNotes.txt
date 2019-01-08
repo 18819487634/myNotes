@@ -836,7 +836,13 @@
 		
 109.	css控制文字竖直显示可以使用 writing-mode: vertical-lr;
 
-110.	
+110.	获取对象的key值：
+			let obj = {one: '123', two: '321}
+			let test = Object.keys(obj)		let values = Object.values(obj)
+			console.log(test)		//结果为key的数组：	['one', 'two']
+			console.log(valuse)		//	结果为value的数组：	['123', '321']
+			
+111.	
 
 
 
