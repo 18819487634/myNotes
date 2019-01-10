@@ -842,9 +842,17 @@
 			console.log(test)		//结果为key的数组：	['one', 'two']
 			console.log(valuse)		//	结果为value的数组：	['123', '321']
 			
-111.	
+111.	使用万象优图进行图片压缩示例：
+		//	原始链接
+		https://static-1253442168.image.myqcloud.com/channel_cover/cover_72194_0227728a1a054df4cfe637ccd92dc46e.jpg		
+		//	加入万象优图的参数后的链接	（对于图片的处理只需加入宽度的处理即可，高度让其自适应）	图片大小明显减少
+		https://static-1253442168.image.myqcloud.com/channel_cover/cover_72194_0227728a1a054df4cfe637ccd92dc46e.jpg?imageView2/2/w/400/q/85!
 
+112. 	vue router中的base属性。
 
+113.	vertical-align 垂直对齐一副图像。
+
+114.	
 
 
 
