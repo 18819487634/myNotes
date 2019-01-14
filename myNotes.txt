@@ -592,7 +592,7 @@
 				//	commit_id是要回到的那个节点，可以通过git log查看，可以只选前6位，撤销之后，已经commit的修改将会清除。
 				git reset --hard commit_id
 				
-88.	react项目路由跳转是通过react-router-dom的插件，
+88.	react项目路由跳转是通过react-router-dom的插件， 一下为router4的写法。
 			//	电脑端用法示例：
 			<div>
 			  <BrowserRouter>
@@ -852,7 +852,18 @@
 
 113.	vertical-align 垂直对齐一副图像。
 
-114.	
+114.	react router实现默认加载页面的写法示例：
+		<BrowserRouter>
+			<div>
+				<Switch>
+					<Route path ="/" component={HomePage} exact />			//	在Route中价格exact属性即可
+					<Route path="/CouponList" component={CouponList} />
+					<Route path="/EditCoupon" component={EditCoupon} />
+				</Switch>
+			</div>
+		</BrowserRouter>
+		
+115.	
 
 
 
