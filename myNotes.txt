@@ -863,8 +863,66 @@
 			</div>
 		</BrowserRouter>
 		
-115.	
+115. 在云服务器上安装git的步骤：
+	1. yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel	// 前两步，安装依赖库和编译工具
+	2. yum install gcc perl-ExtUtils-MakeMaker
+	3. cd /usr/local/src
+	4. wget https://www.kernel.org/pub/software/scm/git/git-2.10.0.tar.gz	// 下载安装git压缩包，可以自己手动选择下载路径
+	5. tar -zvxf git-2.10.0.tar.gz	// 解压下载的源码包
+https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-bit.exe
+	6. cd git-2.10.0	// 进入git-2.10.0文件夹
+	7. make all prefix=/usr/local/git	// 执行编译
+	8. make install prefix=/usr/local/git	// 编译完成后安装到/usr/local/git目录下
+	9. echo 'export PATH=$PATH:/usr/local/git/bin' >> /etc/bashrc	// 将git目录加入PATH，将原来的PATH指向目录修改为现在的目录
+	10. source /etc/bashrc	// 生成环境变量
+	11. git --version	// 能正确查看版本号，说明安装成功
 
+116. Linux一些常用操作	$HOME	表示root文件夹
+	创建文件夹或目录：mkdir /home/testDir
+	切换文件夹或目录：cd /dirName1/dirName2	cd ../
+	移动文件夹： mv /home/testDir /var/tmp		把home中的testDir移动至var/tmp中
+	删除文件夹： rm -rf /var/tmp/testDir		删除var/tmp中的testDir文件夹
+	查看目录下的文件： ls /etc	// 如果不加 /etc则默认查看当前目录下的文件
+	创建文件： touch ~/testFile	使用：ls~	查看刚刚创建的文件
+	复制文件： cp ~/testFile ~/testNewFile
+	删除文件： rm ~/testFile	然后输入y后回车即可删除
+	删除文件夹： rm -rf testDir
+	运维常用命令：
+		ping -c 4 cloud.tencent.com	// 对cloud.tencent.com发送4个ping包，检查与其是否联通
+		netstat命令： 用于显示各种网络相关信息，如网络连接，路由表，接口状态等等。
+			netstat -lt		// 列出所有处于监听状态的tcp端口
+			netstat -tulpn	// 查看所有的端口信息，包括PID和进程名称
+		ps命令：
+			ps aux | grep 'ssh'	// 过滤得到当前系统中的ssh进程信息
+	
+	创建文件：	vi test.txt 		// 创建一个test.txt的文件并打开
+	echo "abc" > text.txt		// 把abc写入test.txt文件
+	
+	vim test.txt		// 进入编辑文件模式
+	在编辑文件模式按esc跳到命令模式，然后：
+	:w	// 保存文件但不退出vim
+	:w file 	// 将修改另外保存到file中，不退出vim
+	:w!	// 强制保存，不退出vim
+	:wq	// 保存文件并退出vim
+	q:	// 不保存文件，推出vim
+	:q!	// 不保存文件，强制退出vim
+	:e!	// 放弃所有修改，从上次保存文件开始再编辑
+
+117. 在云服务器上安装nodeJS
+	wget https://nodejs.org/dist/v6.10.3/node-v6.10.3-linux-x64.tar.xz	// 下载安装包到本地
+	tar xvJf node-v6.10.3-linux-x64.tar.xz		// 解压
+	mv node-v6.10.3-linux-x64 /usr/local/node-v6	// 将node.js目录移动到/usr/local目录下
+	ln -s /usr/local/node-v6/bin/node /bin/node	// 配置node软链接到/bin目录
+	ln -s /usr/local/node-v6/bin/npm /bin/npm	// 下载node的压缩包中已经包含npm，只需将其软链接到bin目录即可
+	echo 'export PATH=/usr/local/node-v6/bin:$PATH' >> /etc/profile	// 将/usr/local/node-v6/bin目录添加到$PATH环境变量中可以方便的使用通过npm全局安装的第三方工具
+	source /etc/profile		// 生效环境变量
+	npm -v 		// 查看npm版本号即可
+
+118. 
+
+	
+	
+	
 
 
 
