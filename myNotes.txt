@@ -918,7 +918,9 @@ https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-b
 	source /etc/profile		// 生效环境变量
 	npm -v 		// 查看npm版本号即可
 
-118. 
+118. event.preventDefault()，该方法将停止事件的传播，组织它被分派到其他Document节点，在事件传播的任何阶段都可以调用它，注意，虽然该方法不能阻止同一个Document节点上得其他
+	 事件句柄被调用，但是它可以阻止把事件分派到其他节点。
+	 
 
 	
 	
