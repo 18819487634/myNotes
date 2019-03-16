@@ -921,8 +921,16 @@ https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-b
 118. event.preventDefault()，该方法将停止事件的传播，组织它被分派到其他Document节点，在事件传播的任何阶段都可以调用它，注意，虽然该方法不能阻止同一个Document节点上得其他
 	 事件句柄被调用，但是它可以阻止把事件分派到其他节点。
 	 
-
-	
+119. 同时发起多个请求：
+		redux-saga中的yield可以同时发送过个请求，示例：
+		import {call} from 'redux-saga/effects'
+		const [user, repos] = yield [
+			call(fetch, '/users'),
+			call(fetch, '/repos')
+		]
+		//	发送请求的返回值分别赋给user和repos
+		
+120. 
 	
 	
 
