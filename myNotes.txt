@@ -930,8 +930,28 @@ https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-b
 		]
 		//	发送请求的返回值分别赋给user和repos
 		
-120. 
+120. antdesign中table报没有key的错误解决方法：
+		<Table columns={columns} datasource={this.state.data} rowkey={record => record.id} />
+		
+121. router-redux在effects中获得state中的数据使用select
+	示例：
+	import { select } from 'redux-sage/effects'
+	const val = yield select(state => state.modelName.state.valueName)
+
+122.	react 的 Fragment意为片段，可以用来包裹元素，
+	示例：
+	import {Fragment, PureComponent} from 'react';
+	export default class TestClass extends PureComponent {
+		render() {
+			return(		//	渲染到页面上只会显示123这个div，不会显示Fragment这个标签，否则有时需要用一个空的div做嵌套。
+				<Fragment>
+					<div>123</div>
+				</Fragment>
+			)
+		}
+	}
 	
+123. 
 	
 
 
