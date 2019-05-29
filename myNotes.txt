@@ -917,6 +917,7 @@ https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-b
 	echo 'export PATH=/usr/local/node-v6/bin:$PATH' >> /etc/profile	// 将/usr/local/node-v6/bin目录添加到$PATH环境变量中可以方便的使用通过npm全局安装的第三方工具
 	source /etc/profile		// 生效环境变量
 	npm -v 		// 查看npm版本号即可
+<<<<<<< HEAD
     
     如果安装版本过低，可以使用n来更新并且管理node的版本
     n是nodejs管理工具
@@ -958,7 +959,43 @@ https://npm.taobao.org/mirrors/git-for-windows/v2.20.1.windows.1/Git-2.20.1-64-b
         
 
 	
+=======
+
+118. event.preventDefault()，该方法将停止事件的传播，组织它被分派到其他Document节点，在事件传播的任何阶段都可以调用它，注意，虽然该方法不能阻止同一个Document节点上得其他
+	 事件句柄被调用，但是它可以阻止把事件分派到其他节点。
+	 
+119. 同时发起多个请求：
+		redux-saga中的yield可以同时发送过个请求，示例：
+		import {call} from 'redux-saga/effects'
+		const [user, repos] = yield [
+			call(fetch, '/users'),
+			call(fetch, '/repos')
+		]
+		//	发送请求的返回值分别赋给user和repos
+		
+120. antdesign中table报没有key的错误解决方法：
+		<Table columns={columns} datasource={this.state.data} rowkey={record => record.id} />
+		
+121. router-redux在effects中获得state中的数据使用select
+	示例：
+	import { select } from 'redux-sage/effects'
+	const val = yield select(state => state.modelName.state.valueName)
+
+122.	react 的 Fragment意为片段，可以用来包裹元素，
+	示例：
+	import {Fragment, PureComponent} from 'react';
+	export default class TestClass extends PureComponent {
+		render() {
+			return(		//	渲染到页面上只会显示123这个div，不会显示Fragment这个标签，否则有时需要用一个空的div做嵌套。
+				<Fragment>
+					<div>123</div>
+				</Fragment>
+			)
+		}
+	}
+>>>>>>> c9aa5d8225042e0f0536e8a3eefea20858da29ed
 	
+123. 
 	
 
 
