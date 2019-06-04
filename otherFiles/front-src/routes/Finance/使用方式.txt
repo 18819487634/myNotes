@@ -1,0 +1,22 @@
+//付款的方式。差一个回调函数。
+const record = {
+     address:'',
+     money:0.23，
+     presaleid:'',
+     prereceiveid:'',
+}
+function d() {
+    conosle.log("执行回调函数");
+
+}
+
+例如：
+
+  <Modal
+      title="付款"
+      visible={modalVisible}
+      onOk={okHandle}
+      onCancel={() => handleModalVisible()}
+    >
+      <PayDetailForm record={record} closeWindow={this.d}/>
+    </Modal> 

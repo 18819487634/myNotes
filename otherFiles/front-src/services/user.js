@@ -1,0 +1,17 @@
+import request from '../utils/request';
+
+export async function query() {
+  return request('/api/users');
+}
+
+export async function queryCurrent() {
+  return request('/user/');
+}
+
+export async function queryCurrentAuthorize() {
+  const date = new Date();
+  const timer = date.getTime().toString();
+  return request(`/api/nanxinuser/currentuser?t=${timer}`, {
+    method: 'GET',
+  });
+}
